@@ -172,5 +172,131 @@ int main() {
             printf("Opcao invalida!\n");
     }
 
+    // ===== MENU =====
+int atributo1, atributo2;
+float soma1 = 0.0f, soma2 = 0.0f;
+
+printf("\n===== MENU DE COMPARACAO =====\n");
+printf("1 - Populacao\n");
+printf("2 - Area\n");
+printf("3 - PIB\n");
+printf("4 - Pontos Turisticos\n");
+printf("5 - Densidade Demografica\n");
+
+printf("Escolha o PRIMEIRO atributo: ");
+scanf("%d", &atributo1);
+
+printf("\nEscolha o SEGUNDO atributo (diferente do primeiro): ");
+scanf("%d", &atributo2);
+
+if (atributo1 == atributo2) {
+    printf("Erro: os atributos devem ser diferentes!\n");
+    return 0;
+}
+
+printf("\nComparacao entre %s e %s\n", nomecidade, nomecidade2);
+
+/* ===== ATRIBUTO 1 ===== */
+switch (atributo1) {
+    case 1:
+        printf("\nAtributo 1: Populacao\n");
+        printf("%s: %lu | %s: %lu\n", nomecidade, populacao, nomecidade2, populacao2);
+        soma1 += populacao;
+        soma2 += populacao2;
+        break;
+
+    case 2:
+        printf("\nAtributo 1: Area\n");
+        printf("%s: %.2f | %s: %.2f\n", nomecidade, area, nomecidade2, area2);
+        soma1 += area;
+        soma2 += area2;
+        break;
+
+    case 3:
+        printf("\nAtributo 1: PIB\n");
+        printf("%s: %.2f | %s: %.2f\n", nomecidade, pib, nomecidade2, pib2);
+        soma1 += pib;
+        soma2 += pib2;
+        break;
+
+    case 4:
+        printf("\nAtributo 1: Pontos Turisticos\n");
+        printf("%s: %d | %s: %d\n", nomecidade, quantpontoturistico,
+               nomecidade2, quantpontoturistico2);
+        soma1 += quantpontoturistico;
+        soma2 += quantpontoturistico2;
+        break;
+
+    case 5:
+        printf("\nAtributo 1: Densidade Demografica\n");
+        printf("%s: %.2f | %s: %.2f\n", nomecidade, densidade1,
+               nomecidade2, densidade2);
+        soma1 += 1.0f / densidade1;
+        soma2 += 1.0f / densidade2;
+        break;
+
+    default:
+        printf("Opcao invalida!\n");
+        return 0;
+}
+
+/* ===== ATRIBUTO 2 ===== */
+switch (atributo2) {
+    case 1:
+        printf("\nAtributo 2: Populacao\n");
+        printf("%s: %lu | %s: %lu\n", nomecidade, populacao, nomecidade2, populacao2);
+        soma1 += populacao;
+        soma2 += populacao2;
+        break;
+
+    case 2:
+        printf("\nAtributo 2: Area\n");
+        printf("%s: %.2f | %s: %.2f\n", nomecidade, area, nomecidade2, area2);
+        soma1 += area;
+        soma2 += area2;
+        break;
+
+    case 3:
+        printf("\nAtributo 2: PIB\n");
+        printf("%s: %.2f | %s: %.2f\n", nomecidade, pib, nomecidade2, pib2);
+        soma1 += pib;
+        soma2 += pib2;
+        break;
+
+    case 4:
+        printf("\nAtributo 2: Pontos Turisticos\n");
+        printf("%s: %d | %s: %d\n", nomecidade, quantpontoturistico,
+               nomecidade2, quantpontoturistico2);
+        soma1 += quantpontoturistico;
+        soma2 += quantpontoturistico2;
+        break;
+
+    case 5:
+        printf("\nAtributo 2: Densidade Demografica\n");
+        printf("%s: %.2f | %s: %.2f\n", nomecidade, densidade1,
+               nomecidade2, densidade2);
+        soma1 += 1.0f / densidade1;
+        soma2 += 1.0f / densidade2;
+        break;
+
+    default:
+        printf("Opcao invalida!\n");
+        return 0;
+}
+
+/* ===== RESULTADO FINAL ===== */
+printf("\n===== RESULTADO FINAL =====\n");
+printf("%s - Soma dos atributos: %.2f\n", nomecidade, soma1);
+printf("%s - Soma dos atributos: %.2f\n", nomecidade2, soma2);
+
+printf("Vencedor: %s\n",
+       soma1 > soma2 ? nomecidade :
+       soma2 > soma1 ? nomecidade2 :
+       "Empate!");
+
+
+
+
+
     return 0;
 }
